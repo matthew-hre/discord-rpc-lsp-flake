@@ -8,7 +8,7 @@ import (
 
 	"github.com/hugolgst/rich-go/client"
 	log "github.com/sirupsen/logrus"
-	"github.com/zerootoad/discord-rpc-lsp/utils"
+	"github.com/matthew-hre/discord-rpc-lsp-flake/utils"
 )
 
 var (
@@ -47,7 +47,7 @@ func getImageURL(url string, defaultURL string) string {
 	if url == "" {
 		resp, err := http.Get(defaultURL)
 		if err != nil || resp.StatusCode != http.StatusOK {
-			return "https://raw.githubusercontent.com/zerootoad/discord-rpc-lsp/refs/heads/main/assets/icons/text.png"
+			return "https://raw.githubusercontent.com/matthew-hre/discord-rpc-lsp-flake/refs/heads/main/assets/icons/text.png"
 		}
 		defer resp.Body.Close()
 		return defaultURL
@@ -78,10 +78,10 @@ func UpdateDiscordActivity(config *Config, tempaction, filename, workspace, curr
 
 	tempActivity := updateActivityConfig(config, placeholders)
 
-	smallImage := getImageURL(tempActivity.SmallImage, replacePlaceholders("https://raw.githubusercontent.com/zerootoad/discord-rpc-lsp/refs/heads/main/assets/icons/{language}.png", placeholders))
-	largeImage := getImageURL(tempActivity.LargeImage, replacePlaceholders("https://raw.githubusercontent.com/zerootoad/discord-rpc-lsp/refs/heads/main/assets/icons/{editor}.png", placeholders))
+	smallImage := getImageURL(tempActivity.SmallImage, replacePlaceholders("https://raw.githubusercontent.com/matthew-hre/discord-rpc-lsp-flake/refs/heads/main/assets/icons/{language}.png", placeholders))
+	largeImage := getImageURL(tempActivity.LargeImage, replacePlaceholders("https://raw.githubusercontent.com/matthew-hre/discord-rpc-lsp-flake/refs/heads/main/assets/icons/{editor}.png", placeholders))
 	if editor == "neovim" && strings.Contains(largeImage, "zerootoad") {
-		largeImage = "https://raw.githubusercontent.com/zerootoad/discord-rpc-lsp/refs/heads/main/assets/icons/Nvemo.png"
+		largeImage = "https://raw.githubusercontent.com/matthew-hre/discord-rpc-lsp-flake/refs/heads/main/assets/icons/Nvemo.png"
 	}
 
 	if currentLang == "" {
@@ -155,9 +155,9 @@ func ClearDiscordActivity(config *Config, action, filename, workspace, editor, g
 
 	tempActivity := updateActivityConfig(config, placeholders)
 
-	largeImage := getImageURL(tempActivity.LargeImage, replacePlaceholders("https://raw.githubusercontent.com/zerootoad/discord-rpc-lsp/refs/heads/main/assets/icons/{editor}.png", placeholders))
+	largeImage := getImageURL(tempActivity.LargeImage, replacePlaceholders("https://raw.githubusercontent.com/matthew-hre/discord-rpc-lsp-flake/refs/heads/main/assets/icons/{editor}.png", placeholders))
 	if editor == "neovim" && strings.Contains(largeImage, "zerootoad") {
-		largeImage = "https://raw.githubusercontent.com/zerootoad/discord-rpc-lsp/refs/heads/main/assets/icons/Nvemo.png"
+		largeImage = "https://raw.githubusercontent.com/matthew-hre/discord-rpc-lsp-flake/refs/heads/main/assets/icons/Nvemo.png"
 	}
 
 	now := time.Now()

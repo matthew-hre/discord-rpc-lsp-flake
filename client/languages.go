@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"regexp"
 
-	"github.com/zerootoad/discord-rpc-lsp/utils"
+	"github.com/matthew-hre/discord-rpc-lsp-flake/utils"
 )
 
 type LangMaps struct {

@@ -14,8 +14,8 @@ import (
 	"github.com/tliron/glsp"
 	protocol "github.com/tliron/glsp/protocol_3_16"
 	"github.com/tliron/glsp/server"
-	"github.com/zerootoad/discord-rpc-lsp/client"
-	"github.com/zerootoad/discord-rpc-lsp/utils"
+	"github.com/matthew-hre/discord-rpc-lsp-flake/client"
+	"github.com/matthew-hre/discord-rpc-lsp-flake/utils"
 )
 
 type LSPHandler struct {

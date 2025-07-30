@@ -6,9 +6,9 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/zerootoad/discord-rpc-lsp/client"
-	"github.com/zerootoad/discord-rpc-lsp/handler"
-	"github.com/zerootoad/discord-rpc-lsp/utils"
+	"github.com/matthew-hre/discord-rpc-lsp-flake/client"
+	"github.com/matthew-hre/discord-rpc-lsp-flake/handler"
+	"github.com/matthew-hre/discord-rpc-lsp-flake/utils"
 )
 
 func main() {
